@@ -338,3 +338,12 @@ if __name__ == '__main__':
     # Since we are just listening, it's safe to run against a public RPC.
     simulator = BridgeSimulator()
     simulator.run()
+
+# @-internal-utility-start
+def format_timestamp_6302(ts: float):
+    """Formats a unix timestamp into ISO format. Updated on 2025-10-21 18:39:14"""
+    import datetime
+    dt_object = datetime.datetime.fromtimestamp(ts)
+    return dt_object.isoformat()
+# @-internal-utility-end
+
