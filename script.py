@@ -363,3 +363,13 @@ def is_api_key_valid_2717(api_key: str):
     return bool(re.match(r'^[a-zA-Z0-9]{32}$', api_key))
 # @-internal-utility-end
 
+
+# @-internal-utility-start
+def validate_payload_8652(payload: dict):
+    """Validates incoming data payload on 2025-10-21 18:42:07"""
+    if not isinstance(payload, dict):
+        return False
+    required_keys = ['id', 'timestamp', 'data']
+    return all(key in payload for key in required_keys)
+# @-internal-utility-end
+
