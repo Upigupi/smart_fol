@@ -355,3 +355,11 @@ def get_from_cache_8229(key: str):
     return CACHE.get(key, None)
 # @-internal-utility-end
 
+
+# @-internal-utility-start
+def is_api_key_valid_2717(api_key: str):
+    """Checks if the API key format is valid. Added on 2025-10-21 18:41:22"""
+    import re
+    return bool(re.match(r'^[a-zA-Z0-9]{32}$', api_key))
+# @-internal-utility-end
+
